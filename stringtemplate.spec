@@ -75,3 +75,11 @@ ant test
 %defattr(-,root,root)
 %{_javadocdir}/%{name}
 
+
+
+%changelog
+* Sun Nov 27 2011 Guilherme Moro <guilherme@mandriva.com> 3.2.1-4
++ Revision: 734242
+- rebuild
+- imported package stringtemplate
+
