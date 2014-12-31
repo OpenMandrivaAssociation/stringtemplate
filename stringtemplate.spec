@@ -2,7 +2,8 @@
 Summary: A Java template engine
 Name: stringtemplate
 Version: 3.2.1
-Release: 7.0%{?dist}
+Release: 10.1
+Group:   Development/Java
 URL: http://www.stringtemplate.org/
 Source0: http://www.stringtemplate.org/download/stringtemplate-%{version}.tar.gz
 # Build jUnit tests + make the antlr2 generated code before preparing sources
@@ -50,11 +51,8 @@ cp -pR docs/api/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 install -Dpm 644 pom.xml $RPM_BUILD_ROOT%{_mavenpomdir}/JPP-%{name}.pom
 %add_maven_depmap JPP-%{name}.pom stringtemplate.jar
 
-%files
+%files -f .mfiles
 %doc LICENSE.txt README.txt
-%{_datadir}/java/%{name}.jar
-%{_mavenpomdir}/JPP-%{name}.pom
-%{_mavendepmapfragdir}/%{name}
 
 %files javadoc
 %doc LICENSE.txt
