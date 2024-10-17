@@ -4,7 +4,7 @@ Name: stringtemplate
 Version: 3.2.1
 Release: 10.3
 Group:   Development/Java
-URL: http://www.stringtemplate.org/
+URL: https://www.stringtemplate.org/
 Source0: http://www.stringtemplate.org/download/stringtemplate-%{version}.tar.gz
 # Build jUnit tests + make the antlr2 generated code before preparing sources
 Patch0: stringtemplate-3.1-build-junit.patch
