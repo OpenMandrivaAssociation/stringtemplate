@@ -19,7 +19,13 @@ StringTemplate 3 is a template engine for generating source code and
 other formatted text. ANTLR 3's runtime imports it from one tree class.
 
 %prep
-%setup -q -c
+%setup -q -c -T
+# The builders' rpmuncompress passes a sources jar to tar.
+python - %{SOURCE0} <<'PY'
+import sys
+import zipfile
+zipfile.ZipFile(sys.argv[1]).extractall(".")
+PY
 mkdir -p src/main/java
 mv org src/main/java/
 python - %{version} <<'PY'
